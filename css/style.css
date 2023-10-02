@@ -1,0 +1,43 @@
+:root{
+  --bg-green: #419688;
+  --bg-gray: #D6DBD7;
+  --strut-gray: #EAEAEA;
+  --buttons-gray: #6B7478;
+}
+
+.debug{
+  background-color: rgba(0, 128, 0, 0.2);
+  border: 1px solid black;
+}
+
+body{
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    var(--bg-green) 0%,
+    var(--bg-green) 15%,
+    var(--bg-gray) 15%,
+    var(--bg-gray) 100%
+  );
+}
+
+.lf-container{
+  max-width: 1000px;
+  height: calc(100% - 40px);
+  margin: 20px auto;
+}
+
+.aside{
+  width: 30%;
+  height: 100%;
+}
+
+.content{
+  width: 70%;
+  height: 100%;
+}
+
+.info-bar{
+  height: 70px;
+  width: 100%;
+}
