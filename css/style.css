@@ -103,3 +103,32 @@ body{
   height: 100%;
   object-fit: cover;
 }
+
+.user-info {
+  width: calc(100% - 50px);
+  height: 100%;
+}
+.user-info .user-name{
+  width: 80%;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.user-info .last-date{
+  width:  20%;
+}
+
+.user-info .last-message{
+  width:  100%;
+}
+.user-info .last-date,
+.user-info .last-message{
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+.messages-container{
+  width: 100%;
+  height: calc(100% - 140px);
+  background-image: url(/img/mine.jpg);
+  overflow-y: scroll;
+}
