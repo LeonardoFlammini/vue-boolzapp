@@ -39,15 +39,16 @@ body{
   height: 100%;
 }
 
-.info-bar{
+.default-bar{
   height: 70px;
   width: 100%;
   background-color: var(--strut-gray);
   border: 1px solid lightgray;
   border-collapse: collapse;
+  padding: 10px;
 }
 
-.info-bar.banner{
+.default-bar.banner{
   background-color: var(--banner-bg);
   border: none;
 }
