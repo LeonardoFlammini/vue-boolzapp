@@ -14,37 +14,91 @@
   <div class="lf-container d-flex debug">
     <div class="aside debug">
       <div class="default-bar d-flex  debug">
-        <div class="user-img">
+        <div class="img-frame">
           <img src="img/avatar_1.jpg" alt="">
         </div>
-        <div class="user-info ms-3 debug"></div>
+        <div class="user-info d-flex justify-content-between align-items-center  ms-3 debug">
+          <div class="name">Giulio Bianchi</div>
+          <div class="buttons">
+            <span class="ms-2"><i class="fa-solid fa-circle-notch"></i></span>
+            <span class="ms-2"><i class="fa-solid fa-message"></i></span>
+            <span class="ms-2"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+          </div>
+        </div>
       </div>
-      <div class="default-bar banner debug">
-        <!-- TODO:banner -->
+      <div class="default-bar banner d-flex debug">
+        <div class="img-frame banner">
+          <i class="fa-solid fa-bell-slash"></i>
+        </div>
+        <div class="text">
+          <div class="ms-3 ">Ricevi notifiche di nuovi messaggi</div>
+          <div class="ms-3 text-decoration-underline cta">Disattiva notifiche desktop</div>
+        </div>
       </div>
       <div class="search-bar d-flex align-items-center debug">
-        <button>
+        <button class="buttons">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
         <input type="text" placeholder="Cerca">
       </div>
       <div class="users-list">
-        <div class="user-card d-flex ">
-          <div class="user-img flex-shrink-0 ">
+        <div class="user-card active d-flex ">
+          <div class="img-frame flex-shrink-0 ">
             <img src="img/avatar_1.jpg" alt="1">
           </div>
           <div class="user-info ms-3 ">
             <span class="user-name">Mario Biondi</span>
-            <span class="last-date">12,00</span>
-            <span class="last-message">Ciao!Come stai?</span>
+            <span class="last-date float-end">12,00</span>
+            <div class="last-message">Ciao!Come stai?</div>
+          </div>
+        </div>
+        <div class="user-card  d-flex ">
+          <div class="img-frame flex-shrink-0 ">
+            <img src="img/avatar_1.jpg" alt="1">
+          </div>
+          <div class="user-info ms-3 ">
+            <span class="user-name">Mario Biondi</span>
+            <span class="last-date float-end">12,00</span>
+            <div class="last-message">Ciao!Come stai?</div>
           </div>
         </div>
       </div>
     </div>
     <div class="content debug">
-      <div class="default-bar debug"></div>
-      <div class="messages-container"></div>
-      <div class="default-bar"></div>
+      <div class="default-bar active-user d-flex align-items-center ">
+        <div class="img-frame">
+          <img src="img/avatar_1.jpg" alt="">
+        </div>
+        <div class="user-info d-flex justify-content-between align-items-center  ms-3 debug">
+          <div class="name">Mario Biondi</div>
+          <div class="buttons">
+            <span class="ms-2"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <span class="ms-2"><i class="fa-solid fa-paperclip"></i></span>
+            <span class="ms-2"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="messages-container">
+        <div class="row sent my-1 p-3  debug">
+          <div class="col-7 debug">
+            <div class="message debug">
+              <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, exercitationem.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row recived my-1 p-3  debug">
+          <div class="col-7 debug">
+            <div class="message debug">
+              <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil culpa corporis maiores inventore sunt! Hic ratione, necessitatibus dicta, sit eum facilis, quibusdam veritatis earum temporibus placeat ab laboriosam accusantium porro.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="default-bar message-actions d-flex justify-content-between align-items-center ">
+        <div class="emoji buttons text-center  debug"><i class="fa-regular fa-face-smile"></i></div>
+        <input type="text" placeholder="Scrivi un nuovo messaggio" class="new-message form-control ">
+        <div class="vocal buttons text-center  debug"><i class="fa-solid fa-microphone"></i></div>
+      </div>
     </div>
   </div>
   <script src="js/app.js"></script>
