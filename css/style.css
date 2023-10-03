@@ -178,6 +178,18 @@ body{
 
 }
 
+.message-info .buttons{
+  display: none;
+}
+
+.message:hover .buttons{
+  display: block;
+}
+
+.message-info .date{
+  font-size: .7rem;
+}
+
 .row.sent .message{
   background-color: var(--msg-sent);
 }
