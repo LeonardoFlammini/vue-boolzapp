@@ -6,7 +6,7 @@
   --banner-bg:#8EDAFC;
   --search-bg:#F7F7F7;
   --msg-sent:#D5F8BA;
-  --msg-recived: #FFFFFF;
+  --msg-received: #FFFFFF;
 }
 /* 
 .debug{
@@ -52,6 +52,7 @@ body{
 
 .buttons {
   color: var(--buttons-gray);
+  cursor: pointer;
 }
 
 .default-bar.banner{
@@ -99,10 +100,12 @@ body{
   height: 80px;
   padding: 10px;
   border-top: 1px solid lightgray;
+  cursor: pointer;
 }
 
 .user-card.active{
   background-color: var(--strut-gray);
+  cursor: default;
 }
 
 .img-frame{
@@ -167,7 +170,7 @@ body{
   flex-direction: row-reverse;
 }
 
-.row.recived{
+.row.received{
 
 }
 
@@ -194,8 +197,8 @@ body{
   background-color: var(--msg-sent);
 }
 
-.row.recived .message{
-  background-color: var(--msg-recived);
+.row.received .message{
+  background-color: var(--msg-received);
 }
 
 

@@ -11,7 +11,7 @@
   <title>Boolzap</title>
 </head>
 <body>
-  <div class="lf-container d-flex debug">
+  <div class="lf-container d-flex debug" id="app">
     <div class="aside debug">
       <div class="default-bar d-flex  debug">
         <div class="img-frame">
@@ -42,22 +42,15 @@
         <input type="text" placeholder="Cerca">
       </div>
       <div class="users-list">
-        <div class="user-card active d-flex ">
+        <div
+          v-for="contact in contacts"
+          class="user-card active d-flex "
+          >
           <div class="img-frame flex-shrink-0 ">
-            <img src="img/avatar_1.jpg" alt="1">
+            <img :src = "contact.avtar" :alt="contact.avatar">
           </div>
           <div class="user-info ms-3 ">
-            <span class="user-name">Mario Biondi</span>
-            <span class="last-date float-end">12,00</span>
-            <div class="last-message">Ciao!Come stai?</div>
-          </div>
-        </div>
-        <div class="user-card  d-flex ">
-          <div class="img-frame flex-shrink-0 ">
-            <img src="img/avatar_1.jpg" alt="1">
-          </div>
-          <div class="user-info ms-3 ">
-            <span class="user-name">Mario Biondi</span>
+            <span class="user-name">{{contact.name}}</span>
             <span class="last-date float-end">12,00</span>
             <div class="last-message">Ciao!Come stai?</div>
           </div>
@@ -94,7 +87,7 @@
             </div>
           </div>
         </div>
-        <div class="row recived my-1 p-3  debug">
+        <div class="row received my-1 p-3  debug">
           <div class="col-7 debug">
             <div class="message debug">
               <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil culpa corporis maiores inventore sunt! Hic ratione, necessitatibus dicta, sit eum facilis, quibusdam veritatis earum temporibus placeat ab laboriosam accusantium porro.</div>
@@ -110,6 +103,6 @@
       </div>
     </div>
   </div>
-  <script src="js/app.js"></script>
+  <script type="module" src="./js/app.js"></script>
 </body>
 </html>
