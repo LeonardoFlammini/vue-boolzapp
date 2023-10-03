@@ -32,7 +32,7 @@
         </div>
         <div class="text">
           <div class="ms-3 ">Ricevi notifiche di nuovi messaggi</div>
-          <div class="ms-3 text-decoration-underline cta">Disattiva notifiche desktop</div>
+          <div class="ms-3 text-decoration-underline cta">Attiva notifiche desktop</div>
         </div>
       </div>
       <div class="search-bar d-flex align-items-center debug">
@@ -44,10 +44,11 @@
       <div class="users-list">
         <div
           v-for="contact in contacts"
-          class="user-card active d-flex "
+          class="user-card d-flex "
+          :class= " {'active' : contact.visible }"
           >
           <div class="img-frame flex-shrink-0 ">
-            <img :src = "contact.avtar" :alt="contact.avatar">
+            <img :src = "contact.avatar" :alt="contact.avatar">
           </div>
           <div class="user-info ms-3 ">
             <span class="user-name">{{contact.name}}</span>
@@ -72,10 +73,14 @@
         </div>
       </div>
       <div class="messages-container">
-        <div class="row sent my-1 p-3  debug">
+        <div
+          v-for="message in contacts[0].messages"
+          class="row my-1 sent p-3 debug" 
+          
+          >
           <div class="col-7 debug">
-            <div class="message d-flex debug">
-              <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, exercitationem.</div>
+            <div class="message d-flex justify-content-between  debug">
+              <div class="text">{{message.message}}</div>
               <div class="message-info d-flex flex-column-reverse  justify-content-between align-items-end ">
                 <div class="date">
                   12,00
@@ -87,14 +92,6 @@
             </div>
           </div>
         </div>
-        <div class="row received my-1 p-3  debug">
-          <div class="col-7 debug">
-            <div class="message debug">
-              <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil culpa corporis maiores inventore sunt! Hic ratione, necessitatibus dicta, sit eum facilis, quibusdam veritatis earum temporibus placeat ab laboriosam accusantium porro.</div>
-
-            </div>
-          </div>
-        </div>
       </div>
       <div class="default-bar message-actions d-flex justify-content-between align-items-center ">
         <div class="emoji buttons text-center  debug"><i class="fa-regular fa-face-smile"></i></div>
@@ -103,6 +100,6 @@
       </div>
     </div>
   </div>
-  <script type="module" src="./js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
