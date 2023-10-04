@@ -39,11 +39,15 @@
         <button class="buttons">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <input type="text" placeholder="Cerca">
+        <input
+          type="text"
+          placeholder="Cerca"
+          v-model="searchString"
+          @keyup.enter="searchName()">
       </div>
       <div class="users-list">
         <div
-          v-for="(contact,index) in contacts"
+          v-for="(contact,index) in contactsToPrint"
           @click="selectContact(index)"
           class="user-card d-flex "
           :class= " {'active' : contact.visible }"
@@ -63,12 +67,16 @@
     </div>
     <div class="content debug">
       <div class="default-bar active-user d-flex align-items-center ">
-        <div class="img-frame">
-          <img src="img/avatar_1.jpg" alt="">
+        <div
+          class="img-frame"
+          v-if="counter !== null">
+          <img :src="contacts[counter].avatar" :alt="contacts[counter].avatar">
         </div>
         <div class="user-info d-flex justify-content-between align-items-center  ms-3 debug">
-          <div class="name">Mario Biondi</div>
-          <div class="buttons">
+          <div class="name"
+          v-if="counter !== null">{{contacts[counter].name}}</div>
+          <div class="buttons"
+          v-if="counter !== null">
             <span class="ms-2"><i class="fa-solid fa-magnifying-glass"></i></span>
             <span class="ms-2"><i class="fa-solid fa-paperclip"></i></span>
             <span class="ms-2"><i class="fa-solid fa-ellipsis-vertical"></i></span>

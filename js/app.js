@@ -167,13 +167,16 @@ createApp({
                 ],
             }
         ],
-        counter: null
+        contactsToPrint: [],
+        counter: null,
+        searchString:""
     
     }
     },
-    computed:{
-        
+    created(){
+        this.contactsToPrint = [...this.contacts];
     },
+    
     methods:{
         selectContact(selected){
             this.counter = selected;
@@ -190,9 +193,20 @@ createApp({
             if(messageObj.status === "sent")return "sent";
             return "received";
         },
+        searchName(){
+            // TODO: Fare il cerca NOT case sensitive
+            if(this.searchString !== ""){
+                console.log("entrato");
+                this.contactsToPrint = this.contactsToPrint.filter(contact => contact.name.includes(this.searchString));
+                console.log(this.contactsToPrint);
+            }else{
+                this.contactsToPrint = this.contacts;
+                console.log(this.contactsToPrint);
+            }
+        }
     },
     mounted(){
-        
+        console.log(this.contactsToPrint);
     }
 
 }).mount("#app");
