@@ -43,7 +43,8 @@
       </div>
       <div class="users-list">
         <div
-          v-for="contact in contacts"
+          v-for="(contact,index) in contacts"
+          @click="selectContact(index)"
           class="user-card d-flex "
           :class= " {'active' : contact.visible }"
           >
@@ -74,7 +75,8 @@
       </div>
       <div class="messages-container">
         <div
-          v-for="message in contacts[0].messages"
+          v-if="counter !== null"
+          v-for="message in contacts[counter].messages"
           class="row my-1 sent p-3 debug" 
           
           >
