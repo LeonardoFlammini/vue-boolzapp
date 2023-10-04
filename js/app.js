@@ -169,7 +169,8 @@ createApp({
         ],
         contactsToPrint: [],
         counter: null,
-        searchString:""
+        searchString:"",
+        newMessage: ""
     
     }
     },
@@ -203,6 +204,26 @@ createApp({
                 this.contactsToPrint = this.contacts;
                 console.log(this.contactsToPrint);
             }
+        },
+        createMessage(){
+            if(this.newMessage !== ""){
+                const newMessageObj = {
+                    date: '10/01/2020 16:15:22',
+                    message: this.newMessage,
+                    status: 'sent'
+                };
+                this.contacts[this.counter].messages.push(newMessageObj);
+                this.newMessage = "";
+                setTimeout(this.answer,1000);
+            }
+        },
+        answer(){
+            const newMessageObj = {
+                date: '10/01/2020 16:15:22',
+                message: "OK!",
+                status: 'received'
+            };
+            this.contacts[this.counter].messages.push(newMessageObj);
         }
     },
     mounted(){

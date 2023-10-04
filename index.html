@@ -113,7 +113,12 @@
       </div>
       <div class="default-bar message-actions d-flex justify-content-between align-items-center ">
         <div class="emoji buttons text-center  debug"><i class="fa-regular fa-face-smile"></i></div>
-        <input type="text" placeholder="Scrivi un nuovo messaggio" class="new-message form-control ">
+        <input
+          type="text"
+          placeholder="Scrivi un nuovo messaggio"
+          class="new-message form-control "
+          v-model="newMessage"
+          @keyup.enter="createMessage(counter)">
         <div class="vocal buttons text-center  debug"><i class="fa-solid fa-microphone"></i></div>
       </div>
     </div>
