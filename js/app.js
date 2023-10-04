@@ -186,8 +186,9 @@ createApp({
                 }
             });
         },
-        printMessages(index){
-            
+        printMessages(messageObj){
+            if(messageObj.status === "sent")return "sent";
+            return "received";
         },
     },
     mounted(){
