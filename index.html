@@ -65,18 +65,24 @@
         </div>
       </div>
     </div>
-    <div class="content debug">
+    <div
+      v-if="counter === null"
+      class="content empty d-flex justify-content-center align-items-center flex-column">
+      <i class="fa-solid fa-comments"></i>
+      <h1 class="fw-bold ">Seleziona una chat</h1>
+    </div>
+    <div v-else class="content debug">
       <div class="default-bar active-user d-flex align-items-center ">
         <div
           class="img-frame"
-          v-if="counter !== null">
+          >
           <img :src="contacts[counter].avatar" :alt="contacts[counter].avatar">
         </div>
         <div class="user-info d-flex justify-content-between align-items-center  ms-3 debug">
           <div class="name"
-          v-if="counter !== null">{{contacts[counter].name}}</div>
+          >{{contacts[counter].name}}</div>
           <div class="buttons"
-          v-if="counter !== null">
+          >
             <span class="ms-2"><i class="fa-solid fa-magnifying-glass"></i></span>
             <span class="ms-2"><i class="fa-solid fa-paperclip"></i></span>
             <span class="ms-2"><i class="fa-solid fa-ellipsis-vertical"></i></span>
@@ -85,7 +91,7 @@
       </div>
       <div class="messages-container">
         <div
-          v-if="counter !== null"
+          
           v-for="message in contacts[counter].messages"
           class="row my-1  p-3 debug" 
           :class="printMessages(message)"

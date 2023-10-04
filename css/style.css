@@ -41,6 +41,14 @@ body{
   height: 100%;
 }
 
+.content.empty{
+  background-image: url(../img/mine.jpg);
+  font-size: 150px;
+  color: var(--bg-green);
+  border-bottom: 70px solid var(--strut-gray);
+  border-top: 70px solid var(--strut-gray);
+}
+
 .default-bar{
   height: 70px;
   width: 100%;
