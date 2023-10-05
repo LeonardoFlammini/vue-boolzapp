@@ -1,3 +1,5 @@
+var DateTime = luxon.DateTime;
+const customDateFormat = 'dd/LL/yyyy HH:mm:ss';
 
 const {createApp} = Vue;
 
@@ -177,11 +179,21 @@ createApp({
     created(){
         this.contactsToPrint = [...this.contacts];
     },
-    
+    computed: {
+        getLastDate(){
+            return (index) => {
+                const date = this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+                const lastDate = DateTime.fromFormat(date, customDateFormat);
+                console.log(lastDate);
+                const lastDateString = lastDate.hour + ':' + lastDate.minute;
+                return lastDateString;
+            }
+        }
+    },
     methods:{
         selectContact(selected){
             this.counter = selected;
-            console.log(this.counter);
+            // console.log(this.counter);
             this.contacts.forEach((contact,index) => {
                 if(index === selected){
                     contact.visible = true;
@@ -199,10 +211,10 @@ createApp({
             if(this.searchString !== ""){
                 console.log("entrato");
                 this.contactsToPrint = this.contactsToPrint.filter(contact => contact.name.includes(this.searchString));
-                console.log(this.contactsToPrint);
+                // console.log(this.contactsToPrint);
             }else{
                 this.contactsToPrint = this.contacts;
-                console.log(this.contactsToPrint);
+                // console.log(this.contactsToPrint);
             }
         },
         createMessage(){
@@ -227,7 +239,7 @@ createApp({
         }
     },
     mounted(){
-        console.log(this.contactsToPrint);
+        // console.log(this.contactsToPrint);
     }
 
 }).mount("#app");
