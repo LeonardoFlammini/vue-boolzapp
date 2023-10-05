@@ -217,8 +217,8 @@ createApp({
         searchName(){
             // TODO: Fare il cerca NOT case sensitive
             if(this.searchString !== ""){
-                console.log("entrato");
-                this.contactsToPrint = this.contactsToPrint.filter(contact => contact.name.includes(this.searchString));
+                // console.log("entrato");
+                this.contactsToPrint = this.contactsToPrint.filter(contact => contact.name.toLowerCase().includes(this.searchString.toLowerCase()));
                 // console.log(this.contactsToPrint);
             }else{
                 this.contactsToPrint = this.contacts;
