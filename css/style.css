@@ -168,7 +168,7 @@ body{
 .messages-container{
   width: 100%;
   height: calc(100% - 140px);
-  background-image: url(/img/mine.jpg);
+  background-image: url(./img/mine.jpg);
   overflow-y: scroll;
   overflow-x: hidden;
 }
