@@ -42,7 +42,7 @@ body{
 }
 
 .content.empty{
-  background-image: url(../img/mine.jpg);
+  background-image: url(./img/mine.jpg);
   font-size: 150px;
   color: var(--bg-green);
   border-bottom: 70px solid var(--strut-gray);
