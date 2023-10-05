@@ -184,9 +184,17 @@ createApp({
             return (index) => {
                 const date = this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
                 const lastDate = DateTime.fromFormat(date, customDateFormat);
-                console.log(lastDate);
+                
                 const lastDateString = lastDate.hour + ':' + lastDate.minute;
                 return lastDateString;
+            }
+        },
+        formatDate(){
+            return (index) => {
+                const date = this.contacts[this.counter].messages[index].date;
+                const formatDate = DateTime.fromFormat(date, customDateFormat);
+                const DateString = formatDate.hour + ':' + formatDate.minute;
+                return DateString;
             }
         }
     },
